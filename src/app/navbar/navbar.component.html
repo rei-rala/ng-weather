@@ -1,0 +1,13 @@
+<header>
+  <div>
+    {{customVar | lowercase }}
+  </div>
+
+  <nav>
+    <ul>
+      <li *ngFor="let navItem of navList">
+        <a [href]="navItem.url">{{navItem.text}}</a>
+      </li>
+    </ul>
+  </nav>
+</header>

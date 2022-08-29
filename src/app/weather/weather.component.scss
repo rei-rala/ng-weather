@@ -1,0 +1,11 @@
+main {
+  animation: appear 1s 1;
+  background-color: var(--color-sixth);
+
+  width: 80%;
+  margin: 2rem auto;
+  padding: 2rem;
+
+  border: 1px inset var(--color-first);
+  border-radius: 10px;
+}

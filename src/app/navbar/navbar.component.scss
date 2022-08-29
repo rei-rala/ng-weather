@@ -1,0 +1,35 @@
+header {
+  position: sticky;
+  top: 0;
+
+  display: flex;
+  justify-content: space-between;
+
+  padding: 0.5rem 0.75rem;
+  background-color: var(--color-third);
+  color: white;
+
+  & > * {
+    display: grid;
+    place-items: center;
+  }
+
+  ul {
+    display: flex;
+    gap: 1rem;
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      text-align: center;
+    }
+
+    li a {
+      text-decoration: none;
+      color: inherit;
+      min-width: 3rem;
+    }
+  }
+}
