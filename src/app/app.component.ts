@@ -1,4 +1,5 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { getWeatherFromLocation } from 'src/services/api';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,18 @@ export class AppComponent implements OnInit, OnChanges {
       this.position = pos;
     };
 
-    navigator.geolocation.getCurrentPosition(successFn);
+    Promise.resolve(navigator.geolocation.getCurrentPosition(successFn))
+      .then(
+        () =>
+          new Promise((res, rej) => {
+            if (this.position) res(getWeatherFromLocation(this.position));
+
+            rej('No location');
+          })
+      )
+
+      .then(console.log)
+      .catch(console.warn);
   }
 
   ngOnChanges(changes: SimpleChanges): void {

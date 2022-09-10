@@ -45,4 +45,6 @@ Thumbs.db
 #
 .vscode
 .angular
-.env
+
+# ?
+.env.ts
