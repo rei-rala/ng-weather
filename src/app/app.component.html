@@ -1,5 +1,10 @@
-<navbar></navbar>
+<navbar [title]="title"></navbar>
 <div *ngIf="!position">
   <notifier [message]="'Debe proporcionar acceso a su ubicación para utilizar esta aplicación'"></notifier>
 </div>
-<weather *ngIf="position" [position]="position"></weather>
+<weather
+  *ngIf="position"
+  [position]="position"
+  (notifyLocation)="onNotifyLocation($event)"
+  >
+</weather>

@@ -17,6 +17,11 @@ export class AppComponent implements OnInit, OnChanges {
     this._position = pos;
   }
 
+  onNotifyLocation(locationObtained: string): void {
+    let sufix = locationObtained.length > 0 ? ' | ' + locationObtained : '';
+    this.title = 'NG-WEATHER' + sufix;
+  }
+
   ngOnInit(): void {
     const successFn = (pos: GeolocationPosition) => {
       this.position = pos;

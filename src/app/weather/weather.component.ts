@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
 
 @Component({
   selector: 'weather',
@@ -7,8 +8,21 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class Weather implements OnInit {
   @Input() position: GeolocationPosition | undefined;
+  @Output() notifyLocation: EventEmitter<string> = new EventEmitter();
+
+  private _locationName: string = '';
+
+  get locationName() {
+    return this._locationName;
+  }
+
+  set locationName(text) {
+    this._locationName = '' + text.trim();
+
+    this.notifyLocation.emit(this._locationName)
+  }
 
   ngOnInit(): void {
-    console.log(this.position)
+    console.log(this.position);
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 type NavbarItem = {
   url: string;
@@ -11,7 +11,7 @@ type NavbarItem = {
   styleUrls: ['./navbar.component.scss'],
 })
 export class Navbar {
-  customVar: string = 'ng-weather :)';
+  @Input() title: string = 'ERR';
   navList: NavbarItem[] = [
     { url: '/first-link', text: 'first' },
     { url: '/second-link', text: 'second' },

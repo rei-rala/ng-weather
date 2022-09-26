@@ -1,3 +1,7 @@
+h1 {
+  color: var(--color-first)
+}
+
 main {
   animation: appear 1s 1;
   background-color: var(--color-sixth);
@@ -6,6 +10,6 @@ main {
   margin: 2rem auto;
   padding: 2rem;
 
-  border: 1px inset var(--color-first);
+  border: 2px outset var(--color-first);
   border-radius: 10px;
 }

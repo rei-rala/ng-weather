@@ -1,3 +1,18 @@
-<main>
-  I am your weather app
-</main>
+<div>
+
+  <h1>Typed: {{(locationName.length > 0 ? locationName : '*empty*') | uppercase}}</h1>
+  <main>
+
+    <h2>
+      I am your weather app
+    </h2>
+
+    <div>
+      <label>
+        New Location
+        <input type="text" [(ngModel)]="locationName">
+      </label>
+    </div>
+  </main>
+
+</div>
